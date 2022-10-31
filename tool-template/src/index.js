@@ -11,7 +11,9 @@ export default class VAR_TOOL_NAME {
       wrapper: null,
     };
 
-    this.CSS = {};
+    this.CSS = {
+      baseClass: 'VAR_TOOL_NAME-tool',
+    };
   }
 
   static get toolbox() {
@@ -25,7 +27,12 @@ export default class VAR_TOOL_NAME {
 
   // renderSettings() {}
 
-  render() {}
+  render() {
+    this.nodes.wrapper = document.createElement('div');
+    this.nodes.wrapper.classList.add(this.CSS.baseClass);
+
+    return this.nodes.wrapper;
+  }
 
   save() {}
 };
