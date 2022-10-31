@@ -1,0 +1,11 @@
+{
+  "name": "editorjs-dev-tools",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "create-editorjs-tool": "./bin/create-tool.js"
+  },
+  "dependencies": {
+    "get-all-files": "^4.1.0"
+  }
+}
