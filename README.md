@@ -17,3 +17,7 @@ Call the command `create-editorjs-tool`
 ```
 create-editorjs-tool <tool-name>
 ```
+
+## Development
+
+...

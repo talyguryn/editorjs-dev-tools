@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   /** Define entry point */
-  entry: path.resolve(__dirname, 'src', 'index.js'),
+  entry: path.resolve(__dirname, 'src', 'index.ts'),
 
   /** Define bundle params */
   output: {
@@ -22,9 +22,9 @@ module.exports = {
 
   module: {
     rules: [
-      /** Process js files */
+      /** Process ts files */
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: [ /node_modules/ ],
         use: [
           {
@@ -33,6 +33,7 @@ module.exports = {
               presets: [ '@babel/preset-env' ],
             },
           },
+          'ts-loader',
         ]
       },
 
@@ -41,7 +42,13 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1
+            }
+          },
         ],
       },
 

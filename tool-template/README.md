@@ -4,7 +4,7 @@
 
 ## Installation
 
-...
+Use your package manager to install the package `editorjs-VAR_TOOL_NAME`.
 
 ## Configuration
 
@@ -14,4 +14,6 @@
 
 ...
 
+## Links
 
+[Editor.js](https://editorjs.io) • [Dev Tools](https://github.com/talyguryn/editorjs-dev-tools)
