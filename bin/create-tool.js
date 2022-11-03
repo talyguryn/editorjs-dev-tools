@@ -23,7 +23,7 @@ console.log('Creating tool', toolName);
 const toolPath = path.join(process.cwd(), toolName);
 fs.mkdirSync(toolPath);
 
-const templatePath = path.join(__dirname, '..', 'tool-template');
+const templatePath = path.join(__dirname, '..', 'template');
 const files = getAllFiles.getAllFilesSync(templatePath).toArray();
 files.forEach(file => {
   const relativePath = path.relative(templatePath, file);
