@@ -13,12 +13,16 @@ import { API, BlockAPI, BlockTool } from '@editorjs/editorjs';
  */
 export default class VAR_TOOL_NAME implements BlockTool {
   /**
-   * Editor.js Core API
+   * Code API — public methods to work with Editor
+   * 
+   * @link https://editorjs.io/api
    */
    private readonly api: API;
 
   /**
-   * Editor.js Block API
+   * Block API — methods and properties to work with Block instance
+   * 
+   * @link https://editorjs.io/blockapi
    */
   private readonly block: BlockAPI;
 
@@ -27,10 +31,19 @@ export default class VAR_TOOL_NAME implements BlockTool {
    */
   private readonly readOnly: boolean;
 
+  /**
+   * Tool data for input and output
+   */
   private data: VAR_TOOL_NAMEData;
 
+  /**
+   * Configuration object that passed through the initial Editor configuration.
+   */
   private config: VAR_TOOL_NAMEConfig;
 
+  /**
+   * Tool's HTML nodes
+   */
   private nodes: {[key: string]: HTMLElement|null};
 
   /**
@@ -41,24 +54,8 @@ export default class VAR_TOOL_NAME implements BlockTool {
   constructor({ data, config, api, block, readOnly }: { data: VAR_TOOL_NAMEData, config: VAR_TOOL_NAMEConfig, api: API, block: BlockAPI, readOnly: boolean }) {
     this.data = data;
     this.config = config;
-
-    /**
-     * Code API — public methods to work with Editor
-     * 
-     * @link https://editorjs.io/api
-     */
     this.api = api;
-
-    /**
-     * Block API — methods and properties to work with Block instance
-     * 
-     * @link https://editorjs.io/blockapi
-     */
     this.block = block;
-
-    /**
-     * Is read-only mode enabled
-     */ 
     this.readOnly = readOnly;
 
     /**
@@ -84,7 +81,6 @@ export default class VAR_TOOL_NAME implements BlockTool {
    */
   render() {
     this.nodes.wrapper = document.createElement('div');
-
     this.nodes.wrapper.classList.add(styles['VAR_TOOL_NAME-tool']);
 
     return this.nodes.wrapper;
